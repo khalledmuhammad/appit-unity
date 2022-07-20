@@ -1,0 +1,113 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+@mixin logeSize(){
+    width: 65px;
+    height: 65px;
+    border-radius: 3rem;
+}
+
+
+.skill_Strip{
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    padding-top: 3rem;
+
+    .skill_Strip-title{
+        color:rgb(153, 153, 153);
+        font-family: $roboto_bold;
+        width: 100%;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 3em;
+        margin-bottom: 4rem;
+        letter-spacing: -3px;
+
+        text-align: center;
+        span{
+            font-family: $roboto_black;
+            font-size: 3.6rem;
+            letter-spacing: -1px;
+            // writing-mode: vertical-lr;
+            color:rgb(120, 120, 120);
+            text-transform: uppercase;
+
+        }
+    }
+}
+    .technology_Move-1{
+        height: 150px;
+        & > div{
+            white-space: nowrap;
+        }
+        &Flex-1{
+            position: absolute;
+            animation:moveLogo-left 33s infinite linear;
+            // transform:translate(100%) 
+        }
+        &Flex-2{
+            position: absolute;
+            animation:moveLogo-left2 33s infinite linear;
+        }
+    }
+
+
+.SL_IMGcontainer{
+    display: inline-block;
+    position: relative;
+    margin: 0 22px;
+    opacity: .8;
+    filter:  grayscale(.4); 
+
+    transition: opacity .4s linear;
+    &:hover{
+        cursor: pointer;
+        opacity: 1;
+        filter:  grayscale(0); 
+        transition: all .4s linear;
+    }
+    &::after{
+        position: absolute;
+        content: attr(info);
+        white-space: nowrap;
+        color: rgb(55, 55, 55);
+        font-size: 1.3rem;
+        bottom: 130%;
+        border-radius: 9px;
+        border-bottom-left-radius: 0;
+        // background-color: rgba(0, 0, 0, 0.671);
+        padding: 1px 33%;
+        opacity: 0;
+        transition: opacity .14s linear;
+        // box-shadow: 13px 0px 12px -8px rgba(0, 0, 0, 0.555);
+        animation: fadeOut 1s linear;
+        transform: translateX(-63%);
+    }
+    &:hover::after{
+        transition: opacity .4s linear;
+        animation: showABit 4s linear;
+        
+        // opacity: 1;
+    }
+    &_img{
+        transform:  rotate(-1deg); // just for perfection
+        @include logeSize();
+        filter: grayscale(1);
+        // box-shadow: 13px 0px 12px -8px rgba(0, 0, 0, 0.555);
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .skill_Strip .skill_Strip-title{
+        font-size: 2.2rem;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        text-align: center;
+        span{ 
+            font-size: 2.4rem;
+
+        }
+    }
+}

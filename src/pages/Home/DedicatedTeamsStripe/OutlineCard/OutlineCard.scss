@@ -1,0 +1,92 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+$outline_card_width: 158;
+$outline_card_height: 260;
+
+
+
+.outline-card {
+    height: $outline_card_height+px;
+    padding: 3.5rem .7rem 1rem;
+    width: $outline_card_width+px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #FFFFFF;
+    // box-shadow: 12px 11px 60px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    // mix-blend-mode: overlay;
+    transition: all .5s ease;
+    opacity: .8;
+
+   
+
+
+    &:hover {
+        cursor: pointer;
+        // mix-blend-mode: lighten;
+        transform: translate3d(0, 1%, 0);
+        transition: all .5s ease;
+        opacity: 1;
+
+    }
+
+    .outline-card-desc {
+        h2 {
+            font-family: $roboto_light;
+            font-style: normal;
+            font-weight: 500;
+            font-size: font-size(23, em);
+            text-align: center;
+            color: #FFFFFF;
+            // mix-blend-mode: overlay;
+        }
+    }
+
+    .outline-card-img {
+        text-align: center;
+        margin-bottom: 1rem;
+        img {
+            // margin: 0 auto;
+            max-width: 45px;
+        }
+    }
+    
+}
+
+// .outline-card-item:nth-of-type(5n+1) {
+//     .outline-card {
+//         .outline-card-desc {
+//             h2 {
+//         background: linear-gradient(149.47deg, rgba(39, 102, 223, 0.8) 5.08%, rgba(68, 66, 179, 0.8) 50.65%, rgba(95, 39, 179, 0.8) 75.66%);
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+
+//     }}}}
+
+// .outline-card-item:nth-of-type(5n+2) {
+//     .outline-card {
+//         background: linear-gradient(149.47deg, rgba(20, 170, 105, 0.8) 5.08%, rgba(25, 145, 128, 0.8) 50.65%, rgba(33, 127, 149, 0.8) 75.66%);
+//     }
+// }
+
+// .outline-card-item:nth-of-type(5n+3) {
+//     .outline-card {
+
+//         background: linear-gradient(149.47deg, rgba(184, 67, 118, 0.8) 5.08%, rgba(162, 51, 125, 0.8) 50.65%, rgba(137, 31, 127, 0.8) 75.66%);
+//     }
+// }
+// .outline-card-item:nth-of-type(5n+4) {
+//     .outline-card {
+//         background: linear-gradient(166.2deg, rgba(51, 145, 255, 0.8) 5.77%, rgba(62, 151, 255, 0.8) 44.34%, rgba(32, 159, 231, 0.8) 86.27%);
+//     }
+// }
+// .outline-card-item:nth-of-type(5n+5) {
+//     .outline-card {
+//         background: linear-gradient(149.47deg, rgba(170, 146, 19, 1) 5.08%,
+//         rgba(175, 107, 25, 1) 50.65%, rgba(175, 76, 27, 1) 75.66%);
+//          }
+// }
+

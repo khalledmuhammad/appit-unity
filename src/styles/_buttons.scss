@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./functions";
+@import "./mixins";
+
+// TODO: This file for buttons styles into the appbutton{
+
+
+button{
+    outline: none;
+    border: 0;
+    box-shadow: none;
+
+        // font: inherit;
+        height: 2em;
+        font-size: 1.1rem;
+        cursor: pointer;
+        position: relative;
+        outline: none;
+        border: 0;
+        border-radius: 1em;
+        padding: .2em 1em;
+        box-shadow: none;
+        white-space: nowrap;
+        
+}

@@ -1,0 +1,140 @@
+@import '/src/styles/variables';
+@import '/src/styles/functions';
+@import '/src/styles/mixins';
+
+.video-stripe {
+    // height: 750px;
+    width: 100%;
+    overflow: hidden;
+    padding: 11em 0 1em 0;
+    background: lightgray;
+    .main-container{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .gridLeftRight{
+            margin: 0 9%;
+            max-width: 1250px;
+            display: grid;
+            // flex-direction: row;
+            align-items: center;
+
+            grid-template-columns: 1.6fr  1.6fr ;
+            grid-row: 1fr;
+            gap:4rem;
+            justify-items: center;
+            .leftContainer{
+                margin-right: 2rem ;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .text-desc{
+                    .title{
+                        font-family: $roboto-black;
+                        font-size: 2.6em;
+                        background: linear-gradient(149.47deg, rgb(111, 159, 255) 6.08%, rgb(86, 145, 255) 11.08%, rgb(88, 86, 249) 50.65%, rgb(128, 43, 255) 75.66%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                    .desc{
+                        font-family: $roboto_regular;
+                        font-size: 1.2em;
+
+                        color: rgb(63, 63, 63);
+
+                    }
+                }
+
+            }
+            .rightContainer{
+                border-radius: 34px;
+                width: 618px;
+                overflow: hidden;
+                box-shadow: 0 5px 11px rgba(0,0,0,.4);
+                height: 360px;
+                width: 618px;
+                .video{
+                   
+                    height: 100%;
+                }
+            }
+            
+            
+            @media only screen and (max-width: 1400px) {
+                grid-template-columns: 1.6fr  ;
+                grid-row: 1fr 1fr;
+                gap:2rem;
+                justify-content: center;
+                // width: 300px;
+
+                .rightContainer{
+                    // width: 100%;
+                    width: 500px;
+                    height: 330px;
+                    display: grid;
+                }
+                .leftContainer{
+                    margin: 0 ;
+                    padding: 0 4vw;
+                    width:  100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .text-desc{
+                        .title{
+                            text-align: center;
+                        }
+                        .desc{
+                            text-align: center;
+                        }
+                    }
+    
+                }
+                @media only screen and (max-width: 735px) {
+                    grid-template-columns: 1.6fr  ;
+                    grid-row: 1fr 1fr;
+                    gap:2rem;
+                    justify-content: center;
+                    // width: 300px;
+    
+                    .rightContainer{
+                        // width: 100%;
+                        width: 350px;
+                        height: 200px;
+                        display: grid;
+                    }
+                    .leftContainer{
+                        margin: 0 ;
+                        padding: 0 4vw;
+                        width:  100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .text-desc{
+                            .title{
+                                text-align: center;
+                            }
+                            .desc{
+                                text-align: center;
+                            }
+                        }
+        
+                    }
+    
+                }
+
+            }
+
+      
+            }
+
+    }
+
+}
+
+
+  
+// d

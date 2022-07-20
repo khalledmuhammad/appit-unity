@@ -1,0 +1,95 @@
+@import "src/styles/variables";
+@import "src/styles/functions";
+@import "src/styles/mixins";
+
+$How2startCard_width: 238;
+$How2startCard_height: 360;
+
+.How2startCard-item {
+  z-index: 1;
+  width: $How2startCard_width + px;
+  height: $How2startCard_height + px;
+  position: relative;
+
+  .How2startCard {
+    // @include glassEdge();
+    background: radial-gradient(
+        circle at 10% 10%,
+        rgba(255, 255, 255, 0.469),
+        rgba(114, 114, 114, 0.211)
+      ),
+      linear-gradient(
+        166.2deg,
+        rgba(236, 236, 236, 0.6) 5.77%,
+        rgba(198, 198, 198, 0.6) 44.34%,
+        rgba(205, 205, 205, 0.6) 86.27%
+      );
+    border-radius: 35px;
+    display: grid;
+    justify-items: center;
+    height: 100%;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    // margin-right: 1rem;
+    transition: all 1s ease-in;
+    &:hover {
+      .How2startCard-img-container {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      .How2startCard-info{
+       
+        transform: translatey(-50%);
+        width: 100%;
+      }
+    
+    
+
+    }
+
+    .How2startCard-img-container {
+      // margin-top: 2rem;
+      opacity: 1;
+      transition: all 0.5s ease-in ;
+      width: 114px;
+      height: 114px;
+      border-radius: 50%;
+      background: rgb(20, 20, 20);
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      
+    }
+    .How2startCard-info {
+      transition: all 0.5s ease-in;
+
+
+      color: rgb(74, 74, 74);
+      h2 {
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 0.8rem;
+      }
+    }
+  }
+}
+.How2startCard-item .How2startCard {
+  @include blink(0.86, 0.86);
+  transition: all 1s cubic-bezier(0.52, 0.04, 0, 1);
+  box-shadow: 11px 12px 9px -4px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: translateY(-1px) scale(1.008);
+    transition: all 1s cubic-bezier(0.52, 0.04, 0, 1);
+    box-shadow: 12px 13px 11px -4px rgba(0, 0, 0, 0.3);
+  }
+}

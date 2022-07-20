@@ -1,0 +1,43 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.why-appituneity-stripe {
+    padding-bottom: 8rem;
+    // background: linear-gradient(149.47deg, rgba(20, 170, 105, 0.9) 5.08%, rgba(25, 145, 128, 0.9) 50.65%, rgba(33, 127, 149, 0.9) 75.66%);
+
+    // box-shadow: 9px 10px 34px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    background: lightgray;
+
+    .stripe-header {
+        padding: 8rem 0 4.8rem;
+
+        h2 {
+            font-family: $roboto_bold;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 3rem;
+            text-align: center;
+            color: rgb(73, 73, 73);
+            margin: 0;
+            span{
+                font-family: $roboto_regular;
+                background: linear-gradient(149.47deg, rgb(26, 188, 118) 5.08%, rgb(31, 196, 174) 50.65%, rgb(35, 140, 163) 75.66%);
+                -webkit-background-clip: text;
+                font-size: 5rem;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+    }
+
+    .outline-card-item {
+        margin-bottom: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+
+}
+

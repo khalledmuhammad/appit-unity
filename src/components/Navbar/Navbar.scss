@@ -1,0 +1,158 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+    justify-content: space-between ;
+    // THIS IS ONLY TO OVERCOUNT BOOTSTRAP COLLAPSE AT 992
+    @media only screen and (min-width: 992px) {
+        justify-content: center !important;
+    }
+
+    .navbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between ;
+
+
+
+        width: 100%;
+        max-width: 1268px;
+        .navbar-brand {
+            color: $white;
+            margin: 0;
+
+            img {
+                margin-left: 9%;
+                width: 200px
+            }
+        }
+
+        .navbar-nav {
+            width: 100%;
+            justify-content: end;
+            max-width: 1100px;
+            .nav-item {
+                text-transform: uppercase;
+                margin-left: 4rem;
+
+                .nav-link {
+                    font-family: $roboto_regular;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: font-size(12, em);
+                    color: $white;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+// Responsive with devices
+@include media-lt-md {
+    .navbar-content {
+        position: relative;
+
+        .navbar-brand {
+            img {
+                display: block;
+                margin-right: auto;
+            }
+        }
+
+        .navbar-nav {
+            background-color: rgb(63, 63, 63);
+        }
+
+        .toggler-container {
+            z-index: 1;
+            text-align: right;
+            padding: 0.5rem 0;
+
+            .navbar-toggler {
+                outline: 0;
+                box-shadow: none;
+                border: none;
+                border-radius: 5px;
+                padding: 0.4rem 1rem;
+                width: 4rem;
+
+                &:hover {
+                    opacity: 0.5;
+                    transition: opacity .3s ease-in-out;
+                }
+
+                svg {
+                    font-size: font-size(30);
+                    color: $white;
+                }
+            }
+        }
+
+        .navbar-collapse {
+            position: absolute;
+            top: 44px;
+            width: 100%;
+
+            &.menu-is-opened {
+                display: block !important;
+                animation: slideDown .5s linear 1 normal forwards;
+            }
+
+            &.menu-is-closed {
+                display: block !important;
+                animation: slideUp .5s linear 1 normal forwards;
+            }
+        }
+
+        .navbar-nav {
+            box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.38);
+            padding: 2rem 0;
+            margin: 1rem 0;
+            border-radius: 0;
+
+            .nav-item {
+                margin: .5rem 0;
+            }
+        }
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: rotateX(-100deg);
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transform-origin: top;
+        // height: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateX(-100deg);
+        transform-origin: top;
+        height: 0;
+    }
+}

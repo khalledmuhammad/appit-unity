@@ -1,0 +1,5 @@
+@import "./variables";
+
+@function font-size($size , $unit: rem) {
+    @return ($size/16)+#{$unit};
+}

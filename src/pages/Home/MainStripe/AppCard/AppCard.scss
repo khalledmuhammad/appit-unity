@@ -1,0 +1,205 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+$app_card_width: 244;
+$app_card_height: 428;
+
+
+.app-card {
+    @include media-lt-sm {
+        & {
+
+
+            .app-card-desc {
+                hr {
+                    margin: (1.7*$card_sm_space)+rem (1.5*$card_sm_space)+rem (1.1*$card_sm_space)+rem 0 !important;
+                }
+            }
+
+            .app-card-footer {
+                img {
+                    width: (46*$card_sm_space)+px !important;
+                }
+            }
+        }
+    }
+
+    @include media-xxs {
+        & {
+            width: ($app_card_width*$card_xs_space)+px;
+            height: ($app_card_height*$card_xs_space)+px;
+            font-size: 10px;
+            padding: ($card_xs_space*1.8)+rem;
+            .app-card-desc {
+                hr {
+                    margin: (1.7*$card_xs_space)+rem (1.5*$card_xs_space)+rem (1.1*$card_xs_space)+rem 0 !important;
+                }
+            }
+
+            .app-card-footer {
+                img {
+                    width: (46*$card_xs_space)+px !important;
+                }
+            }
+        }
+
+    }
+    
+    border-radius: 77px 35px 200px 35px;
+    height: $app_card_height+px;
+    padding: 1.8em 1.3rem 1.2em 2.7em;
+    width: $app_card_width+px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        font-family: $roboto_light;
+        font-style: normal;
+        font-weight: 600;
+        font-size: font-size(20, em);
+        color: $white;
+        text-align: center;
+        font-family: $roboto_light;
+        font-style: normal;
+        font-weight: 600;
+        font-size: font-size(18, em);
+        color: $white;
+        letter-spacing: 1px;
+        text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+        display: grid;
+        height: 40px;
+        align-items: center;
+        margin-bottom: 14px;
+        
+    }
+
+    .app-card-desc {
+
+        p {
+            font-family: $roboto_light;
+            font-style: normal;
+            font-weight: 300;
+            font-size: font-size(16, em);
+            color: #FFFFFF;
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+            border-top: 1px solid white;
+            padding-top: 14px;
+            span {
+                &.desc-sm {
+                    display: none;
+                }
+
+                &.desc-lg {
+                    display: inline;
+                }
+
+                @include media-lt-sm {
+                    &.desc-sm {
+                        display: inline !important;
+                    }
+
+                    &.desc-lg {
+                        display: none !important;
+                    }   
+
+                }
+                padding-top: 21px;
+                &:last-of-type {
+                    font-family: $roboto_light;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: font-size(16, em);
+                    text-decoration-line: underline;
+                    color: $white;
+                    margin-left: 10px;
+
+                    &:hover {
+                        opacity: 0.8;
+                        transition: opacity .4s ease;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .app-card-footer {
+        margin-top: auto;
+
+        img {
+            width: 46px;
+        }
+    }
+
+    &.vertical-card {
+        box-shadow: -4px -10px 22px  rgba(0,0,0,.5);
+        // transform: translate3d(0, 0, 0);
+        transition: transform 1s ease-in-out;
+        //SMOOTHER MOVEMENT
+        transition: all 1s cubic-bezier(.68,0,.4,1);
+
+        // TILTING THE CARDS
+        transform: rotateX(-8deg);
+
+        &:not(:first-of-type) {
+            margin-top: (-$app_card_height + 80) + px;
+
+            @include media-lt-sm {
+                & {
+                    margin-top: (-($app_card_height * $card_sm_space) + 80 * $card_sm_space) + px;
+                }
+            }
+
+            @include media-xxs {
+                & {
+                    margin-top: (-($app_card_height * $card_xs_space) + 80 * $card_sm_space) + px;
+                }
+            }
+        }
+
+        @for $i from 2 through 5 {
+            &:nth-of-type(#{$i}) {
+                margin-left: ($i - 1) * .5rem;
+                margin-right: -($i - 1) * .5rem;
+
+            }
+        }
+
+        &:hover~& {
+            transform: translate3d(0, 47%, 0);
+            // SMOOTH MOVEMENT
+            transition: all .9s cubic-bezier(.3,.01,.11,1);
+            border-radius: 47px 35px 170px 60px;
+        }
+        @include blink(2 ,.9);
+        &:hover {
+            // transform: rotateX(3deg);
+            // transform: translateX(0);
+            transition: transform .8s ease-in-out;
+            // transform: translate3d(0, 20%, 0)
+            // transform: translateY(0);
+            cursor: pointer;
+
+            .app-card-desc,
+            .app-card-footer {
+                transition: opacity 2s ease-in-out;
+                opacity: 1;
+            }
+
+        }
+
+        .app-card-desc,
+        .app-card-footer {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    }
+
+    &.horizontal-card {
+        &:hover {
+            transform: scale(1.01);
+        }
+    }
+}

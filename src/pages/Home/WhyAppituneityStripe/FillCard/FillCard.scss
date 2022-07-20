@@ -1,0 +1,260 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+$fill_card_width: 270;
+$fill_card_height: 410;
+.why-appituneity-stripe{
+    overflow: hidden;
+
+.fill-card {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    width: $fill_card_width+px;
+    height: $fill_card_height+px;
+    background-color: transparent;
+    .fill-card-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(255.37deg, #000000 14.38%, #262626 67.97%);
+        box-shadow: 22px 6px 9px -4px rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+        transition: transform .6s;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        .fill-card-front,
+        .fill-card-back {
+            position: absolute;
+            inset: 0
+        }
+            .fill-card-back::after{
+                content: "";
+                position: absolute;
+                height: 14px;
+                width: 155px;
+                border-radius: 0 0 11px 11px;
+                top: 0px;
+                left: 60px;
+            }
+        .fill-card-back {
+            width: 100%;
+            overflow: hidden;
+            transition: transform 1.4s ease , opacity .5s ease;
+            .Logo-container{
+                display: grid;
+                width: 100%;
+                justify-items: center;
+                bottom: 0;
+                opacity:  0;
+                position: absolute;
+                left:0;
+                transition: transform 1.4s ease , opacity .9s ease;
+                transform: translateY(150px);
+            img{
+                position: absolute;
+                width: 50%;
+            }
+            img:first-child{
+                height: 38px;
+                transform: translateY(-143px);
+                mix-blend-mode:overlay;
+                animation: alterVis1 11s linear 0s infinite;
+            }
+            img:nth-child(2){
+                transform: translateY(-95px);
+                opacity: 0;
+                mix-blend-mode:overlay;
+                margin-bottom: -7px;
+                animation: alterVis2-overlap 11s linear 0s infinite;
+            }}
+            padding: 2.5rem;
+            .fill-card-header {
+                display: flex;
+                align-items: flex-start;
+                h2 {
+                    font-family: $roboto_light;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.4em;
+                    margin-left: 1rem;
+                    color: #FFFFFF;
+                }
+                img {
+                    max-width: 40px;
+                    opacity: 0.1;
+                }
+            }
+            .fill-card-body {
+                padding-top: 1.9rem;
+                p {
+                    font-family: $roboto_light;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: .9em;
+                    color: #dadada;
+                    padding-top: 1rem;
+                    transition: transform 1.4s ease , opacity .5s ease;
+    }}}}
+
+    &:hover {
+        .fill-card-back {
+             transition: transform 1.4s ease , opacity .5s ease;
+            .Logo-container{
+                transform: translateY(0px);
+                opacity:  1;
+                img:nth-child(2){
+                    opacity: 0;
+                    margin-bottom: -7px;
+                }
+            }
+            .fill-card-body {
+                p {
+                    opacity: 0;
+                    transform: translateY(444px);
+}}}}}
+
+.outline-card-item:nth-of-type(5n+1) {
+    .fill-card-back{
+        border-radius: 30px;
+        background: radial-gradient(circle at 10% 10%, rgba(74, 74, 74, 0.4), rgba(255, 255, 255, 0)), linear-gradient(149.47deg, rgba(27, 27, 27, 0.8) 5.08%, rgba(21, 21, 21, 0.8) 50.65%, rgba(17, 17, 17, 0.8) 75.66%);
+    &::after{
+            background: linear-gradient(149.47deg, rgba(39, 102, 223, 1) 5.08%, rgba(68, 66, 179, 1) 50.65%, rgba(95, 39, 179,1) 75.66%);
+        }}
+    p{ border-top: 2px solid rgba(68, 66, 179, 1);
+    }
+    .innerWhite p span:last-child{
+        color: darkblue;
+
+    }
+}
+
+.outline-card-item:nth-of-type(5n+2) {
+    .fill-card-back{
+        border-radius: 30px;
+        background: radial-gradient(circle at 0% 0%, rgba(74, 252, 175, 0.4), rgba(255, 255, 255, 0)), linear-gradient(149.47deg, rgba(20, 170, 105, 0.6) 5.08%, rgba(25, 145, 128, 0.6) 50.65%, rgba(33, 127, 149, 0.6) 75.66%);
+    &::after{
+        background: linear-gradient(149.47deg, rgb(12, 197, 117) 5.08%, rgba(25, 145, 128, 1) 50.65%, rgb(28, 142, 168) 75.66%);
+    }}
+
+    p{ border-top: 2px solid rgb(134, 228, 20);
+    }
+    .innerWhite p span:last-child{
+        color: green;
+    }
+}
+
+.outline-card-item:nth-of-type(5n+3) {
+    .fill-card-back{
+        border-radius: 30px;
+        background: linear-gradient(166.2deg, rgba(236, 236, 236, 0.5) 5.77%, rgba(198, 198, 198, 0.5) 44.34%,rgba(205, 205, 205, 0.5) 86.27%);
+    &::after{
+        background: linear-gradient(149.47deg, rgb(213, 49, 120) 5.08%, rgba(162, 51, 125, 0.8) 50.65%, rgba(137, 31, 127, 0.8) 75.66%);
+    }}
+
+    p{ border-top: 2px solid purple;}
+    .innerWhite p span:last-child{
+        color: purple;
+    }
+}
+.outline-card-item:nth-of-type(5n+4) {
+    .fill-card-back{
+        border-radius: 30px;
+        background: linear-gradient(166.2deg, rgba(51, 145, 255, 0.6) 5.77%, rgba(62, 151, 255, 0.6) 44.34%, rgba(32, 159, 231, 0.6) 86.27%);
+    &::after{
+        background: linear-gradient(166.2deg, rgba(51, 145, 255, 0.8) 5.77%, rgba(62, 151, 255, 0.8) 44.34%, rgba(32, 159, 231, 0.8) 86.27%);
+    }}
+    p{ border-top: 2px solid rgba(51, 145, 255, 1);}
+    .innerWhite p span:last-child{
+        color: rgb(25, 104, 207);
+    }
+}
+.outline-card-item:nth-of-type(5n+5) {
+    .fill-card-back::after{
+        background: linear-gradient(149.47deg, rgba(170, 146, 19, 1) 5.08%,
+        rgba(175, 107, 25, 1) 50.65%, rgba(175, 76, 27, 1) 75.66%);
+         }
+    p{ 
+        border-top: 2px solid rgba(170, 146, 19, 1);
+        padding-top: 8px;
+    }
+    .innerWhite p span:last-child{
+        color: rgba(170, 146, 19, 1);
+    }
+}
+}
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .why-appituneity-stripe {
+        .stripe-header {
+            padding: 8rem 0 4.8rem;
+            h2 {
+                font-family: $roboto_bold;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 3em;
+                padding-left: 2vw;
+                padding-right: 2vw;
+            }
+        }
+    }}
+
+
+@media only screen and (max-width: 735px) {
+    .why-appituneity-stripe {
+        .stripe-header {
+            padding: 8rem 0 4.8rem;
+            h2 {
+                font-family: $roboto_bold;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 3em;
+                padding-left: 2vw;
+                padding-right: 2vw;
+            }
+    
+        }
+    }
+    .fill-card-back {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        min-width:($fill_card_width)+px; ;
+        width: 43vw;
+        max-width: 80vw;
+        height: $fill_card_height+px;
+        background-color: transparent;
+    
+        .fill-card-content {
+        }
+}
+}
+@media only screen and (max-width: 645px) {
+    .why-appituneity-stripe .stripe-header {
+        h2 {
+            font-size: 1.7rem;
+            span{
+                font-size: 3rem;
+            }
+
+
+        }
+    }}
+
+
+
+
+
+
+
+
+
+
+

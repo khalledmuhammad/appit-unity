@@ -1,0 +1,102 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.briefStrip {
+    // background: linear-gradient(149.47deg, rgba(39, 102, 223, 0.9) 5.08%, rgba(68, 66, 179, 0.9) 50.65%, rgba(95, 39, 179, 0.9) 75.66%);
+    background: linear-gradient(149.47deg, rgb(10, 10, 10) 5.08%, rgba(12, 12, 12, 1) 50.65%, rgba(0, 0, 0, 0.9) 75.66%);
+    padding: 14rem 4vw ;
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .up{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            .up-left{
+                font-size: 6em;
+                background: linear-gradient(149.47deg, rgb(111, 159, 255) 6.08%, rgb(86, 145, 255) 11.08%, rgb(88, 86, 249) 50.65%, rgb(128, 43, 255) 75.66%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-left: 2rem;
+                font-family: $roboto-black;
+            }
+            up-right{
+                display: flex;
+                align-items: center;
+            }
+        }
+        .down{
+            // position: ;
+            width: 100%;
+
+            display: flex;
+            flex-direction: row-reverse;  
+            max-width: 1200px;
+            transform: translateY(160px);
+            .down-left{
+                position: absolute;
+            }
+        }
+    }
+    .first-desc {
+        font-family: $roboto-black;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 36px;
+        color: $white;
+        max-width: 360px;
+        margin: 0;
+
+    }
+    .second-desc {
+        font-family: $roboto-regular;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        color: lightgray;
+        letter-spacing: 2px;
+        width: 630px;
+        margin: 0;
+    }
+    .footer-desc {
+        font-family: $roboto-light;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1rem;
+        color: $white;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .briefStrip {
+        // background: linear-gradient(149.47deg, rgba(39, 102, 223, 0.9) 5.08%, rgba(68, 66, 179, 0.9) 50.65%, rgba(95, 39, 179, 0.9) 75.66%);
+        padding: 14rem 4vw ;
+        .main-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .up{
+                flex-direction: column;
+                div{
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .up-left{
+                    margin: 0 0 2rem 0;  
+                }
+            }
+            .down{
+                .down-left{
+                    text-align: center;
+        }}}
+        .first-desc {
+            width: initial;
+        }
+        .second-desc {
+            width: 630px;
+}}}

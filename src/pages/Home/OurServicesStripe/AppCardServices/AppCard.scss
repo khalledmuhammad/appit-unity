@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+@import "src/styles/functions";
+@import "src/styles/mixins";
+
+$app_card_width: 244;
+$app_card_height: 428;
+
+.new-app-card {
+  .innerWhite {
+    display: flex;
+  }
+
+  p {
+    color: #989898;
+
+    font-size: font-size(15, em);
+    .Service-title {
+      color: rgb(56, 56, 56);
+      font-weight: 600;
+      font-size: font-size(20, em);
+    }
+  }
+}

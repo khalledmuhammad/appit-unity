@@ -1,0 +1,50 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.faq-stripe {
+    background-color: $white;
+    padding: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include underBckgrdlogo(.05);
+
+    .main-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        max-width: 1040px ;}
+    .stripe-header {
+        padding: 1.2rem 0 ;
+        h2 {
+            font-family: $roboto_medium;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 2.7rem;
+            text-align: center;
+            color: #989898;
+            margin: 0;
+            margin-bottom: 1rem;
+}}}
+@media only screen and (max-width: 735px) {
+    .faq-stripe {
+        padding: 2rem 0;
+        .stripe-header {
+            padding: 1.2rem 0 ;
+            h2 {
+                font-size: 2.4rem;
+                padding-left: 2vw;
+                padding-right: 2vw;
+            }}}
+            .faq-item .faq-panel{
+        padding: auto 0 ;
+        .faq-qus-container{
+            // FOR THE TRIGGER ICON 
+                font-weight: 500;
+            h3{
+                font-size: 1em;
+                padding-left: 2vw;
+                padding-right: 2vw;
+                font-weight: 300;
+}}}}

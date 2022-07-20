@@ -1,0 +1,197 @@
+@import 'src/styles/variables';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+
+
+
+
+.industry-flex{
+    *{
+        transition: all 1.6s ease;
+    }
+    position: relative;
+    width: 100%;
+    margin: 4em 0;
+    display: grid;
+    max-width: 1500px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill,minmax(550px , 600px) );
+    grid-auto-rows: auto;
+    gap: 22px;
+    justify-items: center;
+    .industry-item{
+        transform-style: preserve-3d;
+        @include colors4cards();
+    .industryCard-out{
+        backdrop-filter: blur(11px);
+        @include glassEdge();
+        border-radius: 37px;
+        box-shadow: 4px 20px 22px -1px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        height: 100%;
+        // background: linear-gradient(166.2deg, rgba(236, 236, 236, 0.6) 5.77%, rgba(198, 198, 198, 0.6) 44.34%,rgba(205, 205, 205, 0.6) 86.27%);
+        .envelopFlex{
+            height: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            .envelopFlex-left{
+                padding: 2rem;
+                flex:2;
+                color: white;
+                h3{
+                    font-size: 1rem;
+                    z-index: 33;
+                    color: rgb(14, 14, 14);
+                    transform: translateZ(4px);
+                }
+                p{
+                    padding-top: 8px;
+                    font-size: .7em;
+                    color :rgb(30, 30, 30);
+                }
+            }
+            .envelopFlex-right{
+                position: relative;
+                flex:.1;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction:column-reverse;
+                $circleSize:64;
+                .circleCont{
+                    border-radius: 50%;
+                    height: $circleSize+px;
+                    width: $circleSize+px;
+                    box-shadow:inset 2px 4px 0px rgba(0, 0, 0, 0.3);
+                    align-self: flex-end;
+                    transform: translate3d(10%,14%,0);
+                    margin: 1rem;
+                    transition: transform 1s cubic-bezier(1,-0.1, 0.39, 1.05),box-shadow .8s cubic-bezier(1,-0.1, 0.39, 1.05);
+                    z-index: 0;
+                }}}}
+
+// Hover
+.industryCard-out:hover{
+        .envelopFlex{
+            .envelopFlex-left{
+                h3{
+                    color: rgb(255, 255, 255);
+            }} 
+            .envelopFlex-right{
+                .circleCont{
+                    transform: scale(17);
+                    box-shadow:inset 6px 3px 0px rgba(0, 0, 0, 0.2);
+                    transition: transform 1s cubic-bezier(1,-0.1, 0.39, 1.05),box-shadow .4s cubic-bezier(1,-0.1, 0.39, 1.05);
+                }
+            }
+        }
+        .overlay-layer{
+            // display:block;
+            opacity: 1;
+            transition: opacity 1s ease;
+}}}}
+
+.overlay-layer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    top: 0;
+    z-index: 99;
+    padding: 4%;
+    display: flex;
+    flex-direction: column-reverse;
+    transition: opacity 1s ease .2s;
+    .overlayFlex-down{
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0 1em;
+        gap: 3em;
+    .icon-word-container{
+        color: white;
+        display: flex;
+        align-items: center;
+        gap:1rem;
+    }
+    a{
+        display: flex;
+        gap : 1rem;
+        cursor:pointer;
+    }
+    $iconSize:25;
+    .contact-us{
+        height: $iconSize+px;
+        width: $iconSize+px;
+        align-self: flex-end;
+    }
+    .readMore{
+        height: $iconSize+px;
+        width: $iconSize+px;
+        align-self: flex-end;
+
+    }
+}
+
+}
+@media only screen and (max-width: 1222px) {
+    .industry-flex{
+        *{
+            transition: all 1.6s ease;
+        }
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        grid-template-columns: auto;
+        grid-auto-rows: auto;
+        .industry-item{
+            max-width: 600px;
+}}}
+@media only screen and (max-width: 630px) {
+
+.industry-strip .industry-main-container{
+    width: 100%;
+    display: block;
+
+    // border: 2px dashed rgb(0, 84, 168);
+}
+    .industry-flex-container{
+        width: 100%;
+        padding: 0;
+    }
+    .industry-flex{
+        *{
+            transition: all 1.6s ease;
+        }
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        margin-bottom: 0;
+        flex-direction: row;
+        position: relative;
+        padding: 1rem 1rem 3rem;
+        width: auto;
+        justify-content: flex-start;
+        .industry-item{
+            max-width: 600px;
+            .industryCard-out .envelopFlex{
+                min-width: 320px;
+                flex-direction: column-reverse;
+            }}}
+        .overlay-layer{
+            // opacity: 1;
+            transition: opacity 1s ease;
+            .overlayFlex-down{
+                justify-content: flex-end;
+                // opacity: 1;
+                padding-bottom: 1rem;
+                a{
+                    display: grid;
+                    justify-items: center;
+                }
+            .contact-us{
+                
+                
+}}}}
+
