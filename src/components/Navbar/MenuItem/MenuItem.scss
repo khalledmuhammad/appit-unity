@@ -1,0 +1,88 @@
+@import "src/styles/variables";
+@import "src/styles/functions";
+@import "src/styles/mixins";
+@import "src/styles/keyframes";
+
+.menuItem {
+  position: absolute;
+  background: #3e3e3e;
+
+  margin-top: 20px;
+  right: 200px;
+  z-index: 10;
+
+  opacity: 1;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  padding: 1rem 3rem;
+  .menuItemContent {
+    display: grid;
+    grid-template-columns: 100px 150px 100px 100px;
+    grid-template-areas:
+      "BACKEND CMS Mobile ECommerce"
+      "BACKEND FrontEnd Mobile ECommerce";
+
+    .BACK-END {
+      grid-area: BACKEND;
+    }
+    .CMS {
+      grid-area: CMS;
+    }
+    .Mobile {
+      grid-area: Mobile;
+    }
+    .E-commerce {
+      grid-area: ECommerce;
+    }
+    .Front-End {
+      grid-area: FrontEnd;
+    }
+    .submenu {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        color: #989898;
+        font-style: bold;
+        font-weight: 600;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 14px;
+      }
+      .title-line {
+        height: 3px;
+        width: 36px;
+        background: #545454;      
+        border-radius: 5px;
+        margin: 0.5rem 0;
+      }
+      a {
+        text-decoration: none;
+        color: #989898;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        margin: 0.6em 0;
+        line-height: 14px;
+        transition: all 0.3s ease-in;
+        &:hover {
+          color: #fff;
+        }
+
+      }
+    }
+  }
+}
+.open {
+  animation: fade_up 0.5s ease-in-out;
+}
+.close {
+/*   opacity: 0;
+  transform: translate(-100%); */
+  display: none;
+
+
+
+  transition: all 0.5s ease-in-out;
+  
+}
+
